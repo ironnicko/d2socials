@@ -1,0 +1,9 @@
+.form-content{
+    background-color: #D3D3D3;
+    padding: 10%;
+    margin: 3%;
+    border-color: red;
+    border-width: thick;
+    border-style: dashed;
+    border-radius: 50px;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html> {% extends "base.html" %} {% load static %}
+<html lang="en" dir="ltr">
+{% block title %}Add{% endblock %}
+<!-- upper part -->
+{% block head %}
+<link rel="stylesheet" href="{% static './create.css' %}"> {% endblock %} {% block body %}
+
+<h1>Fill The Social media Form</h1>
+<!-- heading -->
+
+<div class="forms">
+
+    <form class="row g-4">{% csrf_token %} {{ form }}
+
+        <input type="submit" value="Send">
+    </form>
+
+</div>
+{% endblock %}

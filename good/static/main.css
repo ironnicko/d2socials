@@ -1,0 +1,23 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    /* background: linear-gradient(211deg,  rgb(90, 144, 206) 0%, white 50%, #e8bc2c 85%, rgb(90, 144, 206) 100%); */
+    background-color:rgb(90, 144, 206) ;
+}
+body {
+ 
+    background-image: url("srm2.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: auto;
+    /* background-color: rgb(38, 98, 151); */
+    background: linear-gradient(211deg,  rgb(90, 144, 206) 0%, white 50%, #e8bc2c 85%, rgb(90, 144, 206) 100%);
+}
+#nav-col{
+    background-color: rgb(90, 144, 206);
+}
+
+
+
+
