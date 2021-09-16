@@ -1,4 +1,4 @@
-## https://d2socials.herokuapp.com
+## <a href="https://d2socials.herokuapp.com">D2 Socials</a>
 
 *This website is a project worked on by Nikhil(me) [back-end] and Shubham [front-end]*
 
