@@ -1,19 +1,64 @@
-#cb{
+#cb {
     margin: 10%;
     padding: 5%;
-
+    display: flex;
+    gap: 1rem;
+    flex-direction: column
 }
 
 a:hover {
-    color: #fff;
+    color: #fff
 }
 
+body {
+    text-align: center
+}
 
-#main-cb{
-    background-color: #D3D3D3;
-    margin: 15%;
-    border-style: dashed;
-    border-radius: 100px;
-    border-color: blue;
-    border-width: thick;
+nav {
+    background: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' %3E%3Cpath d='M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z' stroke='none' style='opacity:0.3;' fill='white'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 250px
+}
+#main-cb {
+    background-color: #d4d4d440;
+    border-radius: 2vw;
+    backdrop-filter: blur(5px)
+}
+
+.main-body {
+    display: grid;
+    grid-gap: 5vw;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    padding: 2vw;
+    margin-top: 3rem
+}
+
+body>section>p {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding-left: 0!important;
+    filter: invert(1)
+}
+
+.btn.btn-secondary,.card-title {
+    margin-bottom: 0
+}
+
+::-webkit-scrollbar {
+    width: 16px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dadce0;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    min-height: 50px
+}
+
+::-webkit-scrollbar-track {
+    border: 0;
+    background-color: #639
 }
