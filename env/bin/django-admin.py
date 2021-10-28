@@ -1,4 +1,4 @@
-#!/home/nikhil/Programs/SRM/env/bin/python3.9
+#!/Users/nikhilivannan/Programs/d2socials/env/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
