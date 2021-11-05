@@ -6,7 +6,7 @@ html {
 }
 body {
  
-    background-image: url("srm2.jpg");
+    /* background-image: url("../images/srm2.jpg"); */
     background-size: auto;
     background-attachment: fixed;
     height: auto;
@@ -34,6 +34,3 @@ body {
 	width: 60px;
 }
 
-@media screen and (max-width:800px) {
-    #h1
-    }
