@@ -1,7 +1,21 @@
-var item = document.querySelector(".my-name");
-var body = document.querySelector("body");
-body.style.backgroundImage = "/srm2.jpg";
-item.addEventListener("moveover", function(){
-    item.style.color = "red";
-    item.style.fontSize = "2rem";
-})
+var item = $('.my-name');
+
+function cssStuff(){
+    $(this).css({
+        "color": "white"
+    });
+}
+
+$(document).ready(
+    function(){
+        $('#loading_wrap').remove();
+});
+
+item.on({
+    mouseenter : cssStuff,
+    mouseleave : function(){
+        $(this).css({
+            "color": "gray"
+        })
+    }
+});
