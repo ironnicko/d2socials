@@ -8,7 +8,7 @@ function cssStuff(){
 
 $(document).ready(
     function(){
-        $('#loading_wrap').remove();
+        $('.loading').remove();
     }
 );
 
