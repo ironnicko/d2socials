@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from .models import People
 from .forms import Peopleform
+from rest_framework import serializers
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import PeopleSerializer
+
 
 # Create your views here.
 def create(request, *args, **kwargs):
@@ -37,4 +42,22 @@ def view(request, *args, **kwargs):
 ##        People.objects.filter(name="Ananmay").delete()
     context = {'objects': objects}
     return render(request, "view.html", context)
+
+# API's
+@api_view(['GET'])
+def apiOverview(request):
+    api_urls = {
+        "Names" : "/people-names/",
+        "Details" : "/people-details/<str:pk>/",
+        "Create": "/people-create/",
+        "Update" : "/people-update/<str:pk>",
+        "Delete" : "/people-delete/<str:pk>"
+    }
+    return Response(api_urls)
+
+@api_view(['GET'])
+def peopleNames(request):
+    people = People.objects.all()
+    serializer = PeopleSerializer(people, many=True)
+    return Response(serializer.data)
 
