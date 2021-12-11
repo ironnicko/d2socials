@@ -1,6 +1,6 @@
 from django.db import models
 
-class product(models.Model):
+class People(models.Model):
     name = models.CharField(max_length=256, null=False, blank=False)
     instagram = models.CharField(max_length=256, null=True, blank=True)
     snapchat = models.CharField(max_length=256, null=True, blank=True)

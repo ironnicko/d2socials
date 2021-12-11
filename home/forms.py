@@ -1,11 +1,11 @@
 from django import forms
 
-from .models import product
+from .models import People
 
 
-class productform(forms.ModelForm):
+class Peopleform(forms.ModelForm):
     class Meta:
-        model = product
+        model = People
         fields = [
             'id',
             'name',

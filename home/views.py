@@ -1,18 +1,18 @@
 from django.shortcuts import render
-from .models import product
-from .forms import productform
+from .models import People
+from .forms import Peopleform
 
 # Create your views here.
 def create(request, *args, **kwargs):
     if request.method == "GET":
-        form = productform()
+        form = Peopleform()
         context = {"form":form}
         return render(request, "create.html", context)
     if request.method == "POST":
-        form = productform(request.POST or None)
+        form = Peopleform(request.POST or None)
         if form.is_valid():
             form.save()
-            form = productform()
+            form = Peopleform()
             context = {"form" : form}
         return render(request, "create.html", context)
 
@@ -21,7 +21,7 @@ def view(request, *args, **kwargs):
 
     # Arrays and Variables 
     
-    objects = product.objects.all()
+    objects = People.objects.all()
     names = []
     items = []
 
@@ -30,11 +30,11 @@ def view(request, *args, **kwargs):
     for i in objects:
         if i.name.lower() in names:
             index = names.index(i.name.lower())
-            product.objects.filter(pk=items[index].id).delete()
+            People.objects.filter(pk=items[index].id).delete()
         else:
             names.append(i.name.lower())
             items.append(i)
-##        product.objects.filter(name="Ananmay").delete()
+##        People.objects.filter(name="Ananmay").delete()
     context = {'objects': objects}
     return render(request, "view.html", context)
 
