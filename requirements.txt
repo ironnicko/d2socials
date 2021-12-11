@@ -3,6 +3,7 @@ asyncpg==0.24.0
 certifi==2021.10.8
 charset-normalizer==2.0.7
 Django==3.2.8
+djangorestframework==3.12.4
 dotenv-python==0.0.1
 gunicorn==20.1.0
 idna==3.3
