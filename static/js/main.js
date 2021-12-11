@@ -20,3 +20,7 @@ item.on({
         })
     }
 });
+
+function dismiss(){
+    $(".alert").addClass("hidden");
+}

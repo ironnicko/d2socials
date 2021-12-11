@@ -23,6 +23,18 @@
     <div class="loading hidden loading--full-height">
     </div>
     {% block head %}{% endblock %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container-fluid p-0">
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+        <button type="button" class="btn" onclick="dismiss()" aria-label="Close">
+          <span aria-hidden="True">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
 </head>
 <body style="background-color: white; color: black;">
     <section class="main-body">

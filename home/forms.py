@@ -9,6 +9,7 @@ class Peopleform(forms.ModelForm):
         fields = [
             'id',
             'name',
+            "email",
             'instagram',
             'snapchat',
             'others',

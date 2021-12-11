@@ -24,6 +24,11 @@ body {
     text-decoration: none;
 }
 
+.alert.hidden{
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
 .main{
     font-family: 'IM Fell English SC', serif;
     font-weight: bold;
