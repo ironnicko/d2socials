@@ -7,10 +7,10 @@
 {% block body %}
 	<p style="padding-left: 25%;">Adding your details twice with the same name removes your previous entry.</p>
 	{% for x in objects %}
-	<div class="card" id="main-cb" style="">
+	<div class="card" id="main-cb">
   <!-- <img src="" class="card-img-top" alt="..."> -->
 	    <div class="card-body" id="cb">
-			<h1 class="card-title">{{x.name}}</h1>
+			<h1 class="card-title">{{x.name | title}}</h1>
 			{% if x.others is not "" or x.others is not "-" %}
 			  <p class="card-text" id="cbs">{{x.others}}</p>
 			{% endif %}
