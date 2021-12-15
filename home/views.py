@@ -48,6 +48,17 @@ def view(request, *args, **kwargs):
         else:
             names.append(i.name.lower())
             items.append(i)
+    # Remove invalid insta accounts
+    try:
+        for i in objects:
+            if i.instagram == "**":
+                i.instagram = None
+                i.save()
+            if i.instagram[0] == "@":
+                i.instagram = i.instagram[1:]
+                i.save()
+    except Exception as e:
+        pass
 ##        People.objects.filter(name="Ananmay").delete()
     context = {'objects': objects}
     return render(request, "view.html", context)
