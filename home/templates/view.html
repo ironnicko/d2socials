@@ -5,27 +5,30 @@
 <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/view.css'%}">
 {% endblock %}
 {% block body %}
-	{% for x in objects %}
-	<div class="container">
-		<div class="card m-4" id="main-cb">
+	<section class="second">
+		{% for x in objects %}
+		<div class="card">
 	<!-- <img src="" class="card-img-top" alt="..."> -->
-			<div class="card-body" id="cb">
+			<div class="card-body">
 				<h1 class="card-title">{{x.name | title}}</h1>
 				{% if x.others is not "" or x.others is not "-" %}
-				<p class="card-text" id="cbs">{{x.others}}</p>
+				<p class="card-text">{{x.others}}</p>
 				{% endif %}
-				<div class="row">
+				{% if x.instagram is not None %}
+				<div class="row flex-justify-content-center">
 					<a href="https://www.instagram.com/{{x.instagram}}" class="btn">
 						<img height="50" src="{% static 'images/instagram.svg' %}" alt="" srcset="">
 					</a>
 				</div>
+				{% endif %}
+				{% if x.snapchat is not None %}
 				<div class="row flex-justify-content-center">
 					<img height="50" src="{% static 'images/snapchat.svg' %}" alt="" srcset="" />
 					<p class="lead text-color-secondary">{{x.snapchat}}</p>
 				</div>
+				{% endif %}
 			</div>
 		</div>
-	</div>
-	{% endfor %} 
-
+		{% endfor %} 
+	</section>
 {% endblock %}
