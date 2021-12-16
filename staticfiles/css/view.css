@@ -1,4 +1,4 @@
-#cb {
+.card-body {
     margin: 10%;
     padding: 5%;
     display: flex;
@@ -12,7 +12,6 @@ a:hover {
 
 body {
     text-align: center;
-    overflow-x: hidden
 }
 
 nav {
@@ -20,21 +19,21 @@ nav {
     background-size: 250px
 }
 
-#main-cb {
+.card {
     background-color: #d4d4d440;
     border-radius: 2vw;
     backdrop-filter: blur(5px);
     transition: .5s
 }
 
-#main-cb:hover {
+.card:hover {
     box-shadow: 5px 10px 20px #000;
     transform: scale(1.1) translateZ(0);
     transition: .5s;
     color: #fff
 }
 
-#main-cb::after,#main-cb::before {
+.card::after,.card::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -49,28 +48,28 @@ nav {
     z-index: -1
 }
 
-#main-cb::after {
+.card::after {
     background: #ff52e5;
     border-bottom-right-radius: 60%;
     transition: .5s
 }
 
-#main-cb:hover::after {
+.card:hover::after {
     transition: .8s
 }
 
-#main-cb::before {
+.card::before {
     background: #8922cd;
     border-bottom-right-radius: 35%;
     transition: .5s ease
 }
 
-#main-cb:hover::after,#main-cb:hover::before {
+.card:hover::after,.card:hover::before {
     transform: scale(1,1);
     color: #00bfff
 }
 
-.main-body {
+.second {
     display: grid;
     grid-gap: 5vw;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
