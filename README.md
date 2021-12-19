@@ -3,6 +3,7 @@
 **It's a site for the first-year students of SRMIST of section D2 to
 get their social handles out there for everyone to find out,
 eliminating the gruesome work of asking everyone's social handles :)
+Now has a custom API! checkout /api for find the overview page!
 . Special Thanks to: <a href="https://github.com/Rajaniraiyn">Akhil</a>**
 
 
