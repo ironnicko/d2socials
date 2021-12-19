@@ -36,19 +36,20 @@ def view(request, *args, **kwargs):
     # Arrays and Variables 
     
     objects = People.objects.all()
-    names = []
+    emails = []
     items = []
 
     # Algorithm to remove repeating submitted form
 
     for i in objects:
-        if i.name.lower() in names:
-            index = names.index(i.name.lower())
+        if i.email in emails and i.email != "none":
+            index = emails.index(i.email)
             People.objects.filter(pk=items[index].id).delete()
         else:
-            names.append(i.name.lower())
+            emails.append(i.email)
             items.append(i)
-    # Remove invalid insta accounts
+    # People.objects.filter(name="Anyone").delete()
+    #  validate insta accounts
     try:
         for i in objects:
             if i.instagram == "**":
@@ -59,7 +60,6 @@ def view(request, *args, **kwargs):
                 i.save()
     except Exception as e:
         pass
-##        People.objects.filter(name="Ananmay").delete()
     context = {'objects': objects}
     return render(request, "view.html", context)
 
