@@ -36,18 +36,16 @@ def view(request, *args, **kwargs):
     # Arrays and Variables 
     
     objects = People.objects.all()
-    emails = []
-    items = []
+    emails = {}
 
     # Algorithm to remove repeating submitted form
 
     for i in objects:
-        if i.email in emails and i.email != "none":
-            index = emails.index(i.email)
-            People.objects.filter(pk=items[index].id).delete()
+        if i.email in emails.keys() and i.email != "none":
+            element = emails.get(i.email)
+            People.objects.filter(pk=element.id).delete()
         else:
-            emails.append(i.email)
-            items.append(i)
+            emails[i.email]=i
     # People.objects.filter(name="Anyone").delete()
     #  validate insta accounts
     try:
