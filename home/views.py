@@ -16,11 +16,10 @@ def create(request, *args, **kwargs):
         return render(request, "create.html", context)
     if request.method == "POST":
         form = Peopleform(request.POST or None)
-        if request.POST['email'].split("@")[1] == "srmist.edu.in":
-            pass
-        else:
+        if request.POST['email'].split("@")[1] != "srmist.edu.in":
             messages.error(request, "Please use only SRM email.")
             return redirect("create_view")
+
         if form.is_valid():
             objects = People.objects.all()        
             form.save()
