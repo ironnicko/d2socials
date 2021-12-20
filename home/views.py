@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import People
 from .forms import Peopleform
 from django.contrib import messages
@@ -20,44 +20,39 @@ def create(request, *args, **kwargs):
             pass
         else:
             messages.error(request, "Please use only SRM email.")
-            return render(request, "create.html", {"form": form})
+            return redirect("create_view")
         if form.is_valid():
+            objects = People.objects.all()        
             form.save()
-            form = Peopleform()
-            context = {"form" : form}
             messages.success(request, "Successfully sent!")
         else:
             messages.error("Something went wrong, please try again.")
-        return render(request, "create.html", context)
+        return redirect("create_view")
 
     
 def view(request, *args, **kwargs):
 
-    # Arrays and Variables 
-    
     objects = People.objects.all()
-    emails = {}
-
-    # Algorithm to remove repeating submitted form
-
-    for i in objects:
-        if i.email in emails.keys() and i.email != "none":
-            element = emails.get(i.email)
-            People.objects.filter(pk=element.id).delete()
-        else:
-            emails[i.email]=i
-    # People.objects.filter(name="Anyone").delete()
-    #  validate insta accounts
+    #  Validate insta accounts
     try:
         for i in objects:
-            if i.instagram == "**":
-                i.instagram = None
+            if "https" in i.instagram.split(":")[0]:
+                i.instagram = i.instagram.split("/")[-1]
                 i.save()
             if i.instagram[0] == "@":
                 i.instagram = i.instagram[1:]
                 i.save()
     except Exception as e:
         pass
+
+    # Algorithm to remove repeating submitted form
+    emails = {}
+    for i in objects:
+        if i.email in emails.keys() and i.email != "none":
+            element = emails.get(i.email)
+            People.objects.filter(pk=element.id).delete()
+        else:
+            emails[i.email]=i  
     context = {'objects': objects}
     return render(request, "view.html", context)
 
