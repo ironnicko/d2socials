@@ -2,7 +2,7 @@ var item = $('.my-name');
 
 function cssStuff(){
     $(this).css({
-        "color": "white"
+        "color": "gray"
     });
 }
 
@@ -16,7 +16,7 @@ item.on({
     mouseenter : cssStuff,
     mouseleave : function(){
         $(this).css({
-            "color": "gray"
+            "color": "#fff"
         })
     }
 });
